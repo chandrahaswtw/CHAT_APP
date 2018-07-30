@@ -4,6 +4,10 @@ var socket = io();   //We are making a request from the client to the server -
    socket.on('connect',function (){
      console.log('CONNECTED TO SERVER');
    });
+
+   socket.on('selfUserMessage',function(message){console.log(message)});
+
+   socket.on('broadcastUserMessage',function(message){console.log(message)});
    
    socket.on('newMessage', function (message) {
     console.log('newMessage', message);

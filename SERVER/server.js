@@ -17,14 +17,17 @@ io.on('connection',(socket)=>{
 
    console.log('NEW USER CONNECTED'); 
 
+   socket.emit('selfUserMessage','ADMIN : WELCOME TO THE CHAT APP');
+   socket.broadcast.emit('broadcastUserMessage','A NEW USER HAS BEEN JOINED');
+
    socket.on('createMessage', (message) => {
     console.log('createMessage', message);
-    io.emit('newMessage',{
+    socket.broadcast.emit('newMessage',{
       name : message.name,
       text: message.text,
      createdAt : new Date().getTime()
-    })
-});
+      })
+    });
   
    socket.on('disconnect',()=>{
         console.log('USER DISCONNECTED');
