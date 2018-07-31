@@ -6,7 +6,16 @@
 </head>
 <body>
    <p>WELCOME TO THE CHAT APP</p> 
+    
+   <ol id="messages"></ol>
+
+   <form id="message_form">
+   <input name="message" type="text" placeholder="SOME MESSAGE" />    
+   <button>SEND</button>
+   </form>
+   
    <script src="/socket.io/socket.io.js"></script>
+   <script src="/CLIENT_JS/THIRD_PARTY_JAVASCRIPT/jquery-3.3.1.min.js"></script>
    <script src="/CLIENT_JS/index.js"></script>
 </body>
 </html>
