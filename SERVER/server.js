@@ -3,7 +3,7 @@ const hbs = require('hbs');
 const path = require('path');
 const socketIO = require('socket.io');
 const http = require('http');
-const {generateMessage} = require('./UTILS/message');
+const {generateMessage,generateLocationMessage} = require('./UTILS/message');
 
 const app = express();
 const static_filepath = path.join(__dirname + './../PUBLIC');
@@ -21,10 +21,16 @@ io.on('connection',(socket)=>{
    socket.emit('newMessage',generateMessage('ADMIN','WELCOME TO THE CHAT APP'));
    socket.broadcast.emit('newMessage',generateMessage('ADMIN','A NEW USER HAS BEEN JOINED'));
 
-   socket.on('createMessage', (message) => {
+   socket.on('createMessage', (message,callback) => {
     // console.log('createMessage', message);
     io.emit('newMessage',generateMessage(message.from,message.text))
+    callback();
     });
+
+    socket.on('sendLocation',(location,callback)=>{
+    io.emit('newLocationMessage',generateLocationMessage(location.from,location.lat,location.lon))
+    callback();
+    })
   
    socket.on('disconnect',()=>{
         console.log('USER DISCONNECTED');

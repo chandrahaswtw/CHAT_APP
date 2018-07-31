@@ -1,18 +1,20 @@
 <!doctype <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" href="/CSS/styles.css"
     <meta charset="utf-8" />
     <title>INDEX</title>
 </head>
 <body>
    <p>WELCOME TO THE CHAT APP</p> 
     
-   <ol id="messages"></ol>
+   <ul id="messages"></ul>
 
    <form id="message_form">
-   <input name="message" type="text" placeholder="SOME MESSAGE" />    
+   <input name="message" type="text" placeholder="SOME MESSAGE" autocomplete="off"/>    
    <button>SEND</button>
    </form>
+   <button id="send_location">SEND LOCATION</button>
    
    <script src="/socket.io/socket.io.js"></script>
    <script src="/CLIENT_JS/THIRD_PARTY_JAVASCRIPT/jquery-3.3.1.min.js"></script>
