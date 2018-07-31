@@ -22,13 +22,8 @@ io.on('connection',(socket)=>{
    socket.broadcast.emit('newMessage',generateMessage('ADMIN','A NEW USER HAS BEEN JOINED'));
 
    socket.on('createMessage', (message) => {
-<<<<<<< HEAD
     // console.log('createMessage', message);
     io.emit('newMessage',generateMessage(message.from,message.text))
-=======
-    console.log('createMessage', message);
-    socket.broadcast.emit('newMessage',generateMessage(message.name,message.text))
->>>>>>> a7171d7b211965550a96337d43ba08e1312d2c5f
     });
   
    socket.on('disconnect',()=>{
