@@ -1,23 +1,40 @@
-<!doctype <!DOCTYPE html>
-<html>
-<head>
-    <link rel="stylesheet" href="/CSS/styles.css"
-    <meta charset="utf-8" />
-    <title>INDEX</title>
-</head>
-<body>
-   <p>WELCOME TO THE CHAT APP</p> 
-    
-   <ul id="messages"></ul>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>CHAT | WELCOME</title>
+    <link rel="stylesheet" href="./CSS/index_css.css">
+  </head>
+  <body>
+        <header>
+            <div class="container">
+                <h1>WELCOME TO CHAT APPLICATION</h1>
+            </div>
+        </header>
 
-   <form id="message_form">
-   <input name="message" type="text" placeholder="SOME MESSAGE" autocomplete="off"/>    
-   <button>SEND</button>
-   </form>
-   <button id="send_location">SEND LOCATION</button>
-   
-   <script src="/socket.io/socket.io.js"></script>
-   <script src="/CLIENT_JS/THIRD_PARTY_JAVASCRIPT/jquery-3.3.1.min.js"></script>
-   <script src="/CLIENT_JS/index.js"></script>
-</body>
+    <aside>
+       <p>PEOPLE</p>
+    </aside>
+
+    <section class="sect_main">
+    <ul id="messages"></ul>
+    </section>
+
+    <section class="sect_form">
+      <form class="form_class" id="message_form">
+          <div class="div_text">
+            <input type="text" name="message" placeholder="TYPE SOME MESSAGE TO SEND" autocomplete="off">
+          </div>
+          <div class="div_others">
+            <input type="submit" name="SEND-BUTTON" value="SEND">
+            <input type="reset" name="RESET_BUTTON" value="CLEAR">
+            <input type="button" name="LOCATION_BUTTON" value="SEND LOCATION" id="send_location">
+          </div>
+      </form>
+    </section>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/CLIENT_JS/THIRD_PARTY_JAVASCRIPT/jquery-3.3.1.min.js"></script>
+    <script src="/CLIENT_JS/index.js"></script>
+  </body>
 </html>

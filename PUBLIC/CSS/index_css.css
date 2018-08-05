@@ -1,0 +1,103 @@
+/*GLOBAL RULES*/
+*{
+  padding: 0;
+  margin: 0;
+}
+body {
+  font-family: "Times New Roman";
+}
+
+/*LOCALE RULES*/
+
+/*HEADER SECTION*/
+header {
+position: absolute;
+height:15%;
+width: 100%;
+background-color: #85144b;
+color: #ef5ded;
+text-align: center;
+border-bottom: 3px solid #ef5ded;
+}
+
+header h1{
+margin-top:30px;
+}
+
+/*ASIDE SECTION*/
+aside {
+float:left;
+position: absolute;
+top:15.5%;
+width: 24%;
+height: 84.5%;
+background-color: #85144b;
+color: #ef5ded;
+border-right: 3px solid #ef5ded;
+overflow:auto;
+}
+
+aside p {
+  margin-left: 10px;
+  margin-top: 10px;
+}
+/*MAIN SECTION*/
+.sect_main{
+  float:right;
+  position: absolute;
+  left:24.25%;
+  top:15.5%;
+  height:75%;
+  width: 75.75%;
+  overflow:auto;
+  word-wrap: break-word;
+  
+}
+.sect_main ul {
+  margin-left: 10px;
+  margin-top : 10px;
+}
+/*FORM SECTION*/
+.sect_form{
+  min-height:9.5%;
+  width:75.75%;
+  float:right;
+  position: absolute;
+  left:24.25%;
+  top:90.5%;
+  background-color: pink;
+}
+
+.div_text{
+  float:left;
+}
+.div_others {
+  float:right;
+}
+
+.form_class {
+  margin: 10px;
+}
+
+.div_text input[type="text"]
+{
+  height : 30px;
+  width: 600px;
+  font-family: "Times New Roman";
+}
+.div_others input[type="submit"],.div_others input[type="reset"]
+{
+  height : 34px;
+  margin-left:10px;
+  width: 100px;
+  font-family: "Times New Roman";
+}
+.div_others input[type="button"]
+{
+  height : 34px;
+  margin-left:10px;
+  width: 150px;
+  font-family: "Times New Roman";
+}
+
+/*FOOTER SECTION*/

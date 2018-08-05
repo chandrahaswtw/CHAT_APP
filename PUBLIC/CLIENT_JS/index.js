@@ -1,3 +1,4 @@
+
 var socket = io();   //We are making a request from the client to the server -
                         //to open up and web socket and keep that open.
    
@@ -14,14 +15,14 @@ var socket = io();   //We are making a request from the client to the server -
    socket.on('newMessage', function (message) {
     //console.log('newMessage', message);
     var li = $('<li></li>');
-    li.text(`${message.from}: ${message.text}`);
+    li.text(`${message.from} ${message.createdAt}: ${message.text}`);
     $('#messages').append(li);
   });
 
   socket.on('newLocationMessage',function(message){
    var li = $('<li></li>');
    var a = $('<a target = "_blank">My Location</a>');
-   li.text(`${message.from}: `);
+   li.text(`${message.from } ${message.createdAt}: `);
    a.attr('href',message.url);
    li.append(a);
    $('#messages').append(li);
@@ -45,22 +46,22 @@ socket.on('disconnect',function () {
 $('#send_location').on('click',function(){
     if(!navigator.geolocation)
     {
-      alert('GEOLOCATION not supported by the borwser');
+      alert('GEOLOCATION not supported by the browser');
       return;
     }
 
-    $('#send_location').attr('disabled',true).text('SENDING LOCATION....');
+    $('#send_location').attr('disabled',true).val('SENDING LOCATION....');
 
     navigator.geolocation.getCurrentPosition(function(loc) {
         socket.emit('sendLocation',{
-          from: 'USER',
+          from: 'User',
           lat:  loc.coords.latitude, 
           lon : loc.coords.longitude
         },function() 
-        {$('#send_location').removeAttr('disabled').text('SEND LOCATION');})
+        {$('#send_location').removeAttr('disabled').val('SEND LOCATION');})
         }), 
       function() {alert('UNABLE TO FETCH THE LOCATION')
-      $('#send_location').removeAttr('disabled').text('SEND LOCATION');
+      $('#send_location').removeAttr('disabled').val('SEND LOCATION');
       }
 })
 //RECIEVING THE LOCATION OF USER FROM FRONTEND START
