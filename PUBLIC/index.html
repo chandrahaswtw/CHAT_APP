@@ -1,40 +1,32 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>CHAT | WELCOME</title>
-    <link rel="stylesheet" href="./CSS/index_css.css">
-  </head>
-  <body>
-        <header>
-            <div class="container">
-                <h1>WELCOME TO CHAT APPLICATION</h1>
-            </div>
-        </header>
+<!doctype <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="./CSS/index_styles.css">
+    <title>CHAT | LOGIN</title>
+</head>
+<body>
+    <div class="main_div">
+        <form action="/chat.html" class="form_class">
+            <h1 class="head">JOIN THE CHAT</h1>
+            <br>
+        <div class="sect1">     
+        <label for="NAME">ENTER NAME</label>
+        </div>  
+        <div class="sect2"> 
+        <input type="text" name="NAME_AREA" autocomplete="off" required>
+        </div>   
+        <div class="sect3">
+        <label for="NAME">ENTER ROOM NUMBER</label>
+        </div>   
+        <div class="sect4">
+        <input type="text" name="ROOM_AREA" autocomplete="off" value="APMM" required disabled>
+        </div>   
+        <div class="sect5">
+        <input type="submit" name="BUTTON" value="SEND">
+        </div>
+        </form>
+    </div>
 
-    <aside>
-       <p>PEOPLE</p>
-    </aside>
-
-    <section class="sect_main">
-    <ul id="messages"></ul>
-    </section>
-
-    <section class="sect_form">
-      <form class="form_class" id="message_form">
-          <div class="div_text">
-            <input type="text" name="message" placeholder="TYPE SOME MESSAGE TO SEND" autocomplete="off">
-          </div>
-          <div class="div_others">
-            <input type="submit" name="SEND-BUTTON" value="SEND">
-            <input type="reset" name="RESET_BUTTON" value="CLEAR">
-            <input type="button" name="LOCATION_BUTTON" value="SEND LOCATION" id="send_location">
-          </div>
-      </form>
-    </section>
-
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="/CLIENT_JS/THIRD_PARTY_JAVASCRIPT/jquery-3.3.1.min.js"></script>
-    <script src="/CLIENT_JS/index.js"></script>
-  </body>
+</body>
 </html>

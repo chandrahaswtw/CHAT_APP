@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>CHAT | WELCOME</title>
+    <link rel="stylesheet" href="./CSS/chat_css.css">
+  </head>
+  <body>
+        <header>
+            <div class="container">
+                <h1>WELCOME TO CHAT APPLICATION</h1>
+            </div>
+        </header>
+
+    <aside>
+       <ul id="people_list"></ul>
+    </aside>
+
+    <section class="sect_main">
+    <ul id="messages"></ul>
+    </section>
+
+    <section class="sect_form">
+      <form class="form_class" id="message_form">
+          <div class="div_text">
+            <input type="text" name="message" placeholder="TYPE SOME MESSAGE TO SEND" autocomplete="off">
+          </div>
+          <div class="div_others">
+            <input type="submit" name="SEND-BUTTON" value="SEND">
+            <input type="reset" name="RESET_BUTTON" value="CLEAR">
+            <input type="button" name="LOCATION_BUTTON" value="SEND LOCATION" id="send_location">
+          </div>
+      </form>
+    </section>
+
+   <script id="send_msg_template" type="type/template">
+   <li>
+      <div>
+          <span class="from_class">{{from}}</span> <span class="createdAt_class">{{createdAt}}</span>
+      </div>
+      <div>
+        {{text}}
+      </div>
+   </li>
+  </script>
+
+   <script id="send_loc_template" type="type/template">
+    <li>
+       <div>
+           <span class="from_class">{{from}}</span> <span class="createdAt_class">{{createdAt}}</span>
+       </div>
+       <div>
+         <a href="{{url}}" target="_blank">{{from}}'s LOCATION</a>
+       </div>
+    </li>
+  
+   </script>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/CLIENT_JS/THIRD_PARTY_JAVASCRIPT/jquery-3.3.1.min.js"></script>
+    <script src="/CLIENT_JS/THIRD_PARTY_JAVASCRIPT/mustache.js"></script>
+    <script src="/CLIENT_JS/THIRD_PARTY_JAVASCRIPT/deparam.js"></script>
+    <script src="/CLIENT_JS/index.js"></script>
+  </body>
+</html>

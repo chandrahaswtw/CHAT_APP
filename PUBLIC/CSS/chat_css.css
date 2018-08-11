@@ -37,10 +37,6 @@ border-right: 3px solid #ef5ded;
 overflow:auto;
 }
 
-aside p {
-  margin-left: 10px;
-  margin-top: 10px;
-}
 /*MAIN SECTION*/
 .sect_main{
   float:right;
@@ -100,4 +96,29 @@ aside p {
   font-family: "Times New Roman";
 }
 
-/*FOOTER SECTION*/
+li {
+margin:10px;
+list-style-type: none;
+font-family: Helvetica
+}
+
+.from_class{
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.createdAt_class
+{
+  font-weight: bold;
+  color: #7c827d;
+}
+
+#people_list li {
+  color: black;
+  background-color:  #f1cdf2;
+  border-radius: 5px;
+  font-size:20px;
+  max-width: 200px;
+  font-family: "Times New Roman";
+  padding: 5px;
+}
